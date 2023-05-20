@@ -130,6 +130,9 @@ public class C18_GenelTekrarHomeWork extends TestBaseBeforeClass {
     @Test
     public void test04(){
         //1-sepetteki ürünlerle eklediğimiz ürünlerin aynı olduğunu isim ve fiyat olarak doğrulayın
+
+
+
     }
 }
 
