@@ -28,5 +28,7 @@ public class C20_FileUpload  extends TestBase {
        WebElement fileUploadedElement = driver.findElement(By.tagName("h3"));
 
        Assert.assertTrue(fileUploadedElement.isDisplayed());
+
+
    }
 }

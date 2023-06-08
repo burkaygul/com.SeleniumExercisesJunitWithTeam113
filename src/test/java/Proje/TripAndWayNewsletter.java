@@ -82,9 +82,10 @@ public class TripAndWayNewsletter {
         // 3- 'To activate your subscription please check your email and follow instruction there.' yazisinin gorunur olmasi dogrunlanir
         WebElement basariliKayit = driver.findElement(By.xpath("//div[@id='toast-container']"));
 
-        String actualBasariliKayitIcerik = basariliKayit.getText();
-        String expectedKayitIcerik = "To activate your subscription please check your email and follow instruction there.";
 
+        String actualBasariliKayitIcerik = basariliKayit.getText();
+        System.out.println(actualBasariliKayitIcerik);
+        String expectedKayitIcerik = "To activate your subscription please check your email and follow instruction there.";
         Assert.assertEquals(expectedKayitIcerik,actualBasariliKayitIcerik);
     }
 

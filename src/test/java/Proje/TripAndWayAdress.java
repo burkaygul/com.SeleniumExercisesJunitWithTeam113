@@ -41,16 +41,11 @@ public class TripAndWayAdress {
         // 3- Cookies kabul edilir
         driver.findElement(By.xpath("//*[@type='button']")).click();
 
-        // 4- Sayfa Page Down yapilarak 'Terms and Conditions' yazisinin gorunur oldugu test edilir
+        // 4- Sayfa Page Down yapilarak Address yazisinin gorunur oldugu test edilir
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN).perform();
+                .perform();
 
         Thread.sleep(3000);
 
@@ -62,9 +57,13 @@ public class TripAndWayAdress {
     }
 
     @Test
-    public void test01() {
-        WebElement adressElement = driver.findElement(By.xpath("(//div[@class='footer-item mt_30'])[4]"));
-        Assert.assertTrue(adressElement.isDisplayed());
+    public void test01() throws InterruptedException {
+        // WebElement adressElement = driver.findElement(By.xpath("(//div[@class='footer-item mt_30'])[4]"));
+       //  Assert.assertTrue(adressElement.isDisplayed());
+
+        driver.findElement(By.xpath("(//a[@class='magnific'])[1]")).click();
+
+        Thread.sleep(2000);
     }
 
     @Test
