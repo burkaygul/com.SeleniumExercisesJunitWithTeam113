@@ -53,6 +53,7 @@ public class C24_WindowHandleHomework extends TestBase {
 
         driver.switchTo().window(ilkWHD);
 
+
         System.out.println(driver.getTitle());
 
 
