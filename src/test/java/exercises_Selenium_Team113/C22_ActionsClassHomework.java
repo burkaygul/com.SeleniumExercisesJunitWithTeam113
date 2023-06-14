@@ -35,5 +35,6 @@ public class C22_ActionsClassHomework  extends TestBase {
 
         WebElement doubleClick = driver.findElement(By.xpath("//*[@id='double-click']"));
         actions.doubleClick(doubleClick).perform();
+
     }
 }
