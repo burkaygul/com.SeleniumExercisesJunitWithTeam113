@@ -25,6 +25,7 @@ public class C23_IframeHomework extends TestBase {
         WebElement popupMessage = driver.findElement(By.xpath("//*[@class='modal-body']"));
         System.out.println(popupMessage.getText());
 
+
         driver.findElement(By.xpath("//*[text()='Close']")).click();
 
 
