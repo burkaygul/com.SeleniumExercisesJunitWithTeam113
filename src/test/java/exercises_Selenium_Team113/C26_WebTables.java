@@ -24,7 +24,9 @@ public class C26_WebTables extends TestBase {
         WebElement allBodyElement = driver.findElement(By.tagName("tbody"));
         System.out.println(allBodyElement.getText());
 
-        List<WebElement> satirSayisi = driver.findElements(By.tagName("tr"));
+        Thread.sleep(1000);
+        List<WebElement> satirSayisi = driver.findElements(By.xpath("//tbody//tr"));
+
         int expectedRowsNr = 9;
         int actualRowsNr = satirSayisi.size();
 
@@ -44,5 +46,24 @@ public class C26_WebTables extends TestBase {
         int actualColumnNumber = firstColumnData.size();
 
         Assert.assertEquals(expectedColumnNumber,actualColumnNumber);
+
+
+        List<WebElement> fifthColumn = driver.findElements(By.xpath("//tbody//tr//td[5]"));
+
+        for (WebElement eachFifthColumn: fifthColumn
+             ) {
+            System.out.println(eachFifthColumn.getText());
+            System.out.println("===============");
+        }
+
+        System.out.println(hucredekiBilgiyiDondurenMethod(3, 5));
+    }
+
+    private String hucredekiBilgiyiDondurenMethod(int satirSayisi, int sutunSayisi) {
+
+        //tbody//tr[3]//td[5]
+        String dinamikXpath = "//tbody/tr["+satirSayisi+"]/td["+sutunSayisi+"]";
+        WebElement istenenDataElement = driver.findElement(By.xpath(dinamikXpath));
+        return istenenDataElement.getText();
     }
 }
