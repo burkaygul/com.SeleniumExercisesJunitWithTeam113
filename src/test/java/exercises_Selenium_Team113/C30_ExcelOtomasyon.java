@@ -28,18 +28,28 @@ public class C30_ExcelOtomasyon {
 
         Workbook workbook = WorkbookFactory.create(fis);
 
-        int lastRowNm= workbook.getSheet("Sayfa1").getLastRowNum();
 
-        boolean beninVarMi = false;
+        int sonSatirSayisi = workbook.getSheet("Sayfa1").getLastRowNum();
 
-        for (int i = 1; i <lastRowNm ; i++) {
-            String actualCell = workbook.getSheet("Sayfa1").getRow(i).getCell(0).toString();
+        boolean beninVarMi=false;
 
-            if (actualCell.equalsIgnoreCase("Benin")){
-                beninVarMi = true;
+        for (int i = 1; i <= sonSatirSayisi ; i++) {
+
+            String actualIsim = workbook
+                    .getSheet("Sayfa1")
+                    .getRow(i)
+                    .getCell(0)
+                    .toString();
+
+            if (actualIsim.equalsIgnoreCase("Benin")){
+                beninVarMi=true;
                 break;
             }
         }
+
         Assert.assertTrue(beninVarMi);
+
     }
-}
+
+    }
+
